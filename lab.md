@@ -75,6 +75,7 @@ select name from people;
 
 update people set name = 'Krusty the Clown'
 where name = 'Crusty the Clown';
+<!-- where id = 13; -->
 select name from people;
 
          name         
@@ -211,9 +212,12 @@ select * from movies;
 
 9.  The cinema would like to make the Iron Man movies a triple billing. Find out the show time of "Iron Man 2" and set the show time of "Iron Man 3" to start two hours later.
 
-update movies set show_time = '20:45'
+select show_time from movies where title = 'Iron Man 2';
+update movies set show_time = '20:45' where title = 'Iron Man 3'
+
+<!-- update movies set show_time = '20:45'
 where title = 'Iron Man 3';
-select * from movies;
+select * from movies; -->
 
  id |                title                | year | show_time 
 ----+-------------------------------------+------+-----------
@@ -242,9 +246,11 @@ select * from movies;
 
 1.  Research how to delete multiple entries from your table in a single command.
 
-delete from movies
+delete from table where name = 'Ant-Man' or name = 'Thor'
+
+<!-- delete from movies
 where title in ('Ant-Man', 'Thor');
-select * from movies;
+select * from movies; -->
 
  id |                title                | year | show_time 
 ----+-------------------------------------+------+-----------
